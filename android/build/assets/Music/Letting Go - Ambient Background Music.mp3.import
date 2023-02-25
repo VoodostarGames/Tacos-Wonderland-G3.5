@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Letting Go - Ambient Background Music.mp3-5a2808d259590bc0eb3a1e425226b8e8.mp3str"
+
+[deps]
+
+source_file="res://Music/Letting Go - Ambient Background Music.mp3"
+dest_files=[ "res://.import/Letting Go - Ambient Background Music.mp3-5a2808d259590bc0eb3a1e425226b8e8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

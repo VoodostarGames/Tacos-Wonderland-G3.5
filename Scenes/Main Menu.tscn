@@ -1,0 +1,200 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Music/Letting Go - Ambient Background Music.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Misc Scripts/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Misc Scripts/ParallaxMenu.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Core Game Sprites/Backgroundv2/6.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/GrapeSoda.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Sprites/Text Sprites/tacotitle.png" type="Texture" id=11]
+[ext_resource path="res://Fonts/Caja.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+
+[sub_resource type="Animation" id=3]
+resource_name = "TitleFloat"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MenuGUI/TextStrings/Game Title/TitleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27, 96 ), Vector2( 27, 90 ), Vector2( 27, 96 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 15 )
+
+[node name="Main Menu" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="MenuGUI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ParallaxBackground" parent="MenuGUI"]
+script = ExtResource( 3 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_mirroring = Vector2( 640, 455 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer"]
+position = Vector2( 403, 226 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 805, 324 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer2"]
+position = Vector2( 403, 200 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 700, 324 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer3"]
+position = Vector2( 344, 175 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 805, 324 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer4"]
+position = Vector2( 403, 165 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 920, 324 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer5"]
+position = Vector2( 460, 142 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="MenuGUI/Background"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 576, 324 )
+
+[node name="Sprite" type="Sprite" parent="MenuGUI/Background/ParallaxLayer6"]
+position = Vector2( 350, 170 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 9 )
+
+[node name="Buttons" type="CanvasLayer" parent="MenuGUI"]
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MenuGUI/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 4.00002
+margin_right = 15.0
+margin_bottom = 91.0
+rect_scale = Vector2( 1.8, 1.3 )
+custom_constants/separation = 6
+alignment = 1
+
+[node name="Start Game" type="Button" parent="MenuGUI/Buttons/ButtonsContainer"]
+margin_top = 4.0
+margin_right = 158.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 5 )
+text = "Start Journey"
+flat = true
+expand_icon = true
+
+[node name="Game Settings" type="Button" parent="MenuGUI/Buttons/ButtonsContainer"]
+margin_top = 32.0
+margin_right = 158.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 5 )
+text = " Game Settings"
+flat = true
+expand_icon = true
+
+[node name="Quit Game" type="Button" parent="MenuGUI/Buttons/ButtonsContainer"]
+margin_top = 60.0
+margin_right = 158.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 5 )
+text = "quit game"
+flat = true
+expand_icon = true
+
+[node name="TextStrings" type="CanvasLayer" parent="MenuGUI"]
+
+[node name="Game Title" type="Control" parent="MenuGUI/TextStrings"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 45.0
+
+[node name="TitleSprite" type="Sprite" parent="MenuGUI/TextStrings/Game Title"]
+position = Vector2( 27, 96 )
+scale = Vector2( 0.28, 0.27 )
+texture = ExtResource( 11 )
+
+[node name="TitleAnimation" type="AnimationPlayer" parent="MenuGUI/TextStrings/Game Title/TitleSprite"]
+root_node = NodePath("../../../../..")
+autoplay = "TitleFloat"
+anims/RESET = SubResource( 4 )
+anims/TitleFloat = SubResource( 3 )
+
+[node name="Copyright" type="Label" parent="MenuGUI/TextStrings"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -148.0
+margin_top = -34.0
+margin_right = -22.0
+margin_bottom = -22.0
+rect_scale = Vector2( 1.1, 1.1 )
+custom_fonts/font = SubResource( 2 )
+text = "by Voodostar Games"
+
+[node name="Game Version" type="Label" parent="MenuGUI/TextStrings"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -233.0
+margin_top = -21.0
+margin_right = -30.0
+margin_bottom = -9.0
+rect_scale = Vector2( 1.1, 1.1 )
+custom_fonts/font = SubResource( 2 )
+text = "Taco's Wonderland Alpha 0.3.0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+mix_target = 1
+
+[connection signal="pressed" from="MenuGUI/Buttons/ButtonsContainer/Start Game" to="." method="_on_Start_Game_pressed"]
+[connection signal="pressed" from="MenuGUI/Buttons/ButtonsContainer/Game Settings" to="." method="_on_Game_Settings_pressed"]
+[connection signal="pressed" from="MenuGUI/Buttons/ButtonsContainer/Quit Game" to="." method="_on_Quit_Game_pressed"]

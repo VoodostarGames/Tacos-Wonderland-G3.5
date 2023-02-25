@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/1-Minute Nature Background Sound.mp3-d5c117636bbe042a3a5f4cc3628dbd73.mp3str"
+
+[deps]
+
+source_file="res://Music/1-Minute Nature Background Sound.mp3"
+dest_files=[ "res://.import/1-Minute Nature Background Sound.mp3-d5c117636bbe042a3a5f4cc3628dbd73.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
